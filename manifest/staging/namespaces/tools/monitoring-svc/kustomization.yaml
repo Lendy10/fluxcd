@@ -4,3 +4,4 @@ resources:
   - deployment.yaml
   - secret-tool.yaml
   - service.yaml
+  - release.yaml
