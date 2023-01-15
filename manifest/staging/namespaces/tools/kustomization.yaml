@@ -4,4 +4,4 @@ namespace: tools
 resources:
   - monitoring-svc
   - namespace.yaml
-  - ../../../../helm-chart/grafana
+  - ../../../../helm-chart/grafana/chart.yaml
