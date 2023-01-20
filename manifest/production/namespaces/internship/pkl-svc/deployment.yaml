@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pkl-svc-deployment
+spec:
+  selector:
+    matchLabels:
+      app: pkl-svc-deployment
+  template:
+    metadata:
+      labels:
+        app: pkl-svc-deployment
+    spec:
+      containers:
+        - name: pkl-svc-deployment
+          image: gcr.io/studied-union-367003/edimu-pkl:main
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 80
