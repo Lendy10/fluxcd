@@ -9,7 +9,7 @@ spec:
     - host: ingress.pembelajaran.my.id
       http:
         paths:
-          - path: /app/blog
+          - path: "/app/blog"
             pathType: Prefix
             backend:
               service:
