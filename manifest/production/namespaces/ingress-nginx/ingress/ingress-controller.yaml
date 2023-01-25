@@ -7,7 +7,8 @@ metadata:
 
 spec:
   rules:
-    - http:
+    - host: ingress.pembelajaran.my.id
+      http:
         paths:
           - path: /app/blog
             pathType: Prefix
