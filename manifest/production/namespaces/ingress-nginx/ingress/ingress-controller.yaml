@@ -14,8 +14,6 @@ spec:
             backend:
               service:
                 name: blog-svc
-                port:
-                  number: 80
 
 ---
 apiVersion: v1
