@@ -9,7 +9,7 @@ spec:
     - host: ingress.pembelajaran.my.id
       http:
         paths:
-          - path: "/app/blog"
+          - path: "/"
             pathType: Prefix
             backend:
               service:
@@ -24,7 +24,5 @@ metadata:
   name: blog-svc
 spec:
   type: ExternalName
-  externalName: blog-app-svc.blog.svc.cluster.local
-  ports:
-    - port: 80
+  externalName: blog-app-svc.blog.svc
 # test-service.namespacename.svc.cluster.local
