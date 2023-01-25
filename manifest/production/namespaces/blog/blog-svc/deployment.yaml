@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx
+  name: blog-svc
 spec:
   selector:
     matchLabels:
-      app: nginx
+      app: blog-svc
   template:
     metadata:
       labels:
-        app: nginx
+        app: blog-svc
     spec:
       containers:
-        - name: nginx
+        - name: blog-svc
           image: nginx:latest
           resources:
             limits:
