@@ -3,7 +3,6 @@ kind: Service
 metadata:
   name: blog-app-svc
 spec:
-  type: ClusterIP
   selector:
     app: blog-svc
   ports:
