@@ -13,16 +13,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: blog-svc
+                name: blog-app
                 port:
                   number: 80
-
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: blog-svc
-spec:
-  type: ExternalName
-  externalName: blog-app-svc.blog.svc.cluster.local
-# test-service.namespacename.svc.cluster.local
