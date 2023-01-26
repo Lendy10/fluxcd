@@ -9,10 +9,10 @@ spec:
     - host: ingress.pembelajaran.my.id
       http:
         paths:
-          - path: /
-            pathType: Prefix
-            backend:
+          - backend:
               service:
                 name: blog-app
                 port:
                   number: 80
+            pathType: Prefix
+            path: /

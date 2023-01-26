@@ -3,10 +3,8 @@ kind: Service
 metadata:
   name: blog-app
 spec:
-  type: ClusterIP
   selector:
     app: blog-svc
   ports:
     - port: 80
       protocol: TCP
-      targetPort: 80
