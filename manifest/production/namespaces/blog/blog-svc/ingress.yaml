@@ -17,3 +17,13 @@ spec:
                   number: 80
             pathType: Prefix
             path: /
+    - host: ingress.pembelajaran.my.id
+      http:
+        paths:
+          - backend:
+              service:
+                name: blog-app
+                port:
+                  number: 80
+            pathType: Prefix
+            path: /
