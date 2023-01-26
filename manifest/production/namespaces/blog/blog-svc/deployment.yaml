@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: blog-svc
-          image: nginx:latest
+          image: geniwhitelabel/edimu-pkl:main
           resources:
             limits:
               memory: "128Mi"
