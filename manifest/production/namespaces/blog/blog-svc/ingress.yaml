@@ -2,16 +2,13 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: minimal-ingress
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
-
 spec:
   ingressClassName: nginx
   rules:
     - host: ingress.pembelajaran.my.id
       http:
         paths:
-          - path: "/blog/app"
+          - path: /
             pathType: Prefix
             backend:
               service:
