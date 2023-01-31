@@ -3,3 +3,4 @@ kind: Kustomization
 namespace: klikgeni
 resources:
   - namespace.yaml
+  - laravel-svc
