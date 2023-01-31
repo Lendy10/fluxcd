@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: klikgeni-test-internal-service
+spec:
+  selector:
+    app: klikgeni-test-deployment
+  ports:
+    - port: 80
+      protocol: TCP

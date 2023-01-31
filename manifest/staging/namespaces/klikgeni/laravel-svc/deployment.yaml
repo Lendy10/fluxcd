@@ -1,0 +1,81 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: klikgeni-test-deployment
+  labels:
+    app: klikgeni
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: klikgeni-test-deployment
+  template:
+    metadata:
+      labels:
+        app: klikgeni-test-deployment
+    spec:
+      containers:
+        - name: klikgeni-test-deployment
+          image: geniwhitelabel/backend-service:klikgeni_web_test
+          imagePullPolicy: Always
+          envFrom:
+            - configMapRef:
+                name: klikgeni-test-configmap-deployment
+          env:
+            - name: DB_DATABASE
+              valueFrom:
+                configMapKeyRef:
+                  name: klikgeni-test-configmap
+                  key: default_database
+            - name: DB_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: klikgeni-test-configmap
+                  key: database_url
+            - name: DB_USERNAME
+              value: root
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: klikgeni-test-secret
+                  key: default_password
+            - name: DB_PORT
+              value: "3307"
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: POD_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+          livenessProbe:
+            initialDelaySeconds: 5
+            periodSeconds: 60
+            timeoutSeconds: 60
+            successThreshold: 1
+            failureThreshold: 3
+            httpGet:
+              scheme: HTTP
+              path: /
+              port: 80
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "500m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+          args:
+            - "--kubelet-insecure-tls"
+            - "--kubelet-preferred-address-types=InternalIP,ExternalIP"
+          ports:
+            - containerPort: 80
+          # volumeMounts:
+          #   - mountPath: /var/www/html/public/image
+          #     name: laravel-public
+          #     subPath: klikgeni-test/public
+      # volumes:
+      #   - name: laravel-public
+      #     persistentVolumeClaim:
+      #       claimName: klikgeni-test-public

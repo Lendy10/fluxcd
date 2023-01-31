@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: klikgeni-test-configmap
+data:
+  database_url: "103.82.243.89"
+  default_database: klikgeni_test

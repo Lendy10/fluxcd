@@ -1,0 +1,16 @@
+JWT_SECRET: "and i wake with your memory over me. that's a real fucking legacy"
+MAIL_HOST: "info.klikgeni.com"
+MAIL_USERNAME: "noreply@info.klikgeni.com"
+MAIL_PASSWORD: "Aico0eepet"
+MAIL_FROM_ADDRESS: "noreply@info.klikgeni.com"
+RABBITMQ_HOST: myrabbit
+RABBITMQ_USER: "guest"
+RABBITMQ_PASSWORD: "guest"
+RABBITMQ_EXCHANGE_NAME: "transaction.fanout"
+RABBITMQ_QUEUE_DIRECT: "email.service"
+RABBITMQ_QUEUE_DIRECT_QRIS: "qris.service"
+RABBITMQ_EXCHANGE_NAME_DIRECT: "transaction.direct"
+
+DEPLOYMENT_NAME: "klikgeni-test-deployment"
+MIN_Replicas: 2
+MAX_Replicas: 4
