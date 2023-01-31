@@ -6,3 +6,4 @@ resources:
   - hpa.yaml
   - secret.yaml
   - service.yaml
+  - mysql-service.yaml
