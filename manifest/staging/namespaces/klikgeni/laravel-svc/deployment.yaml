@@ -33,7 +33,10 @@ spec:
                   name: klikgeni-test-configmap
                   key: database_url
             - name: DB_USERNAME
-              value: root
+              valueFrom:
+                secretKeyRef:
+                  name: klikgeni-test-secret
+                  key: default_username
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
