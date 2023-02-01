@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-controller
+  annotations:
+    kubernetes.io/ingress.class: ingress-nginx
+spec:
+  rules:
+    - host: ingress.pembelajaran.my.id
+      http:
+        paths:
+          - backend:
+              service:
+                name: klikgeni-svc
+                port:
+                  number: 80
+            pathType: Prefix
+            path: /
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: klikgeni-svc
+spec:
+  type: ExternalName
+  externalName: klikgeni-test-internal-service.klikgeni.svc
