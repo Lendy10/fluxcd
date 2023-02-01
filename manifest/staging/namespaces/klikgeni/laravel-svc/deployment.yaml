@@ -14,6 +14,7 @@ spec:
       labels:
         app: klikgeni-test-deployment
     spec:
+      hostNetwork: true
       containers:
         - name: klikgeni-test-deployment
           image: geniwhitelabel/backend-service:klikgeni_web_test
