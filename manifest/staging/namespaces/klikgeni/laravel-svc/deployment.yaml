@@ -24,25 +24,13 @@ spec:
                 name: klikgeni-test-configmap-deployment
           env:
             - name: DB_DATABASE
-              valueFrom:
-                configMapKeyRef:
-                  name: klikgeni-test-configmap
-                  key: default_database
+              value: klikgeni_test
             - name: DB_HOST
-              valueFrom:
-                configMapKeyRef:
-                  name: klikgeni-test-configmap
-                  key: database_url
+              value: 103.82.243.89
             - name: DB_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: klikgeni-test-secret
-                  key: default_username
+              value: klikgeni-test
             - name: DB_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: klikgeni-test-secret
-                  key: default_password
+              value: Eshaezaedoo6zae
             - name: DB_PORT
               value: "3307"
             - name: POD_NAME
