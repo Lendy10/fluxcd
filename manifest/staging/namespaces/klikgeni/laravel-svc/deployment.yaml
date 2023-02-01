@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: klikgeni-test-deployment
-          image: geniwhitelabel/edimu-pkl:main
+          image: geniwhitelabel/backend-service:klikgeni_web_test
           imagePullPolicy: Always
           envFrom:
             - configMapRef:
@@ -52,16 +52,16 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: metadata.namespace
-          livenessProbe:
-            initialDelaySeconds: 5
-            periodSeconds: 60
-            timeoutSeconds: 60
-            successThreshold: 1
-            failureThreshold: 3
-            httpGet:
-              scheme: HTTP
-              path: /
-              port: 80
+          # livenessProbe:
+          #   initialDelaySeconds: 5
+          #   periodSeconds: 60
+          #   timeoutSeconds: 60
+          #   successThreshold: 1
+          #   failureThreshold: 3
+          #   httpGet:
+          #     scheme: HTTP
+          #     path: /
+          #     port: 80
           resources:
             requests:
               memory: "256Mi"
