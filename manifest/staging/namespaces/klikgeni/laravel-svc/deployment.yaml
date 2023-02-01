@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: klikgeni-test-deployment
-          image: geniwhitelabel/backend-service:klikgeni_web_test
+          image: geniwhitelabel/edimu-pkl:main
           imagePullPolicy: Always
           envFrom:
             - configMapRef:
