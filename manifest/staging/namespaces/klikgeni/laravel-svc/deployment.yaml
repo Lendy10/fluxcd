@@ -25,23 +25,23 @@ spec:
           env:
             - name: DB_DATABASE
               valueFrom:
-                configMapKeyRef:
-                  name: klikgeni-test-configmap
+                secretKeyRef:
+                  name: klikgeni-test-secret
                   key: default_database
             - name: DB_HOST
               valueFrom:
-                configMapKeyRef:
-                  name: klikgeni-test-configmap
+                secretKeyRef:
+                  name: klikgeni-test-secret
                   key: database_url
             - name: DB_USERNAME
               valueFrom:
-                configMapKeyRef:
-                  name: klikgeni-test-configmap
+                secretKeyRef:
+                  name: klikgeni-test-secret
                   key: username
             - name: DB_PASSWORD
               valueFrom:
-                configMapKeyRef:
-                  name: klikgeni-test-configmap
+                secretKeyRef:
+                  name: klikgeni-test-secret
                   key: password
             - name: DB_PORT
               value: "3307"
