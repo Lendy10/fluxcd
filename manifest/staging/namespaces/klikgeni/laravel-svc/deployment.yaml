@@ -23,7 +23,7 @@ spec:
             - name: DB_DATABASE
               value: klikgeni_bismillah
             - name: DB_HOST
-              vvalue: 103.82.243.89
+              value: 103.82.243.89
             - name: DB_USERNAME
               valueFrom:
                 secretKeyRef:
