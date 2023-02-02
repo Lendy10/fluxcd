@@ -24,13 +24,13 @@ spec:
                 name: klikgeni-test-configmap-deployment
           env:
             - name: DB_DATABASE
-              value: klikgeni_test
+              value: klikgeni_bismillah
             - name: DB_HOST
               value: 103.82.243.89
             - name: DB_USERNAME
-              value: klikgeni-test
+              value: klikgeni-public
             - name: DB_PASSWORD
-              value: Eshaezaedoo6zae
+              value: xee2xi9tiph0dieguMaipeeW4
             - name: DB_PORT
               value: "3307"
             - name: POD_NAME
