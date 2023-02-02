@@ -19,6 +19,9 @@ spec:
         - name: klikgeni-test-deployment
           image: geniwhitelabel/backend-service:klikgeni_web_test
           imagePullPolicy: Always
+          envFrom:
+            - configMapRef:
+                name: klikgeni-test-configmap-deployment
           env:
             - name: DB_DATABASE
               value: klikgeni_test
@@ -38,9 +41,6 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: metadata.namespace
-          envFrom:
-            - configMapRef:
-                name: klikgeni-test-configmap-deployment
           # livenessProbe:
           #   initialDelaySeconds: 5
           #   periodSeconds: 60
@@ -53,7 +53,7 @@ spec:
           #     port: 80
           resources:
             requests:
-              memory: "125Mi"
+              memory: "256Mi"
               cpu: "500m"
             limits:
               memory: "256Mi"
