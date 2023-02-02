@@ -5,3 +5,5 @@ metadata:
 data:
   database_url: 103.82.243.89
   default_database: klikgeni_test
+  username: klikgeni-test
+  password: Eshaezaedoo6zae
