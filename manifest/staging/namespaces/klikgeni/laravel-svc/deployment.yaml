@@ -21,19 +21,13 @@ spec:
           imagePullPolicy: Always
           env:
             - name: DB_DATABASE
-              value: klikgeni_bismillah
+              value: klikgeni_test
             - name: DB_HOST
               value: 103.82.243.89
             - name: DB_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: klikgeni-prod-secret
-                  key: default_username
+              value: klikgeni-test
             - name: DB_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: klikgeni-prod-secret
-                  key: default_password
+              value: Eshaezaedoo6zae
             - name: DB_PORT
               value: "3307"
             - name: POD_NAME
@@ -59,7 +53,7 @@ spec:
           #     port: 80
           resources:
             requests:
-              memory: "256Mi"
+              memory: "125Mi"
               cpu: "500m"
             limits:
               memory: "256Mi"
