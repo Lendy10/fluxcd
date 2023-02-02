@@ -22,22 +22,9 @@ spec:
           envFrom:
             - configMapRef:
                 name: klikgeni-test-configmap-deployment
+            - secretRef:
+                name: klikgeni-test-secret
           env:
-            - name: DB_DATABASE
-              valueFrom:
-                secretKeyRef:
-                  name: klikgeni-test-secret
-                  key: default_database
-            - name: DB_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: klikgeni-test-secret
-                  key: username
-            - name: DB_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: klikgeni-test-secret
-                  key: password
             - name: DB_PORT
               value: "3307"
             - name: POD_NAME
