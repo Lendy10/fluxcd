@@ -10,6 +10,7 @@ data:
   APP_URL: "http://localhost"
 
   LOG_CHANNEL: "stack"
+  DB_HOST: "103.82.243.89"
 
   DB_CONNECTION: "mysql"
 
