@@ -28,9 +28,15 @@ spec:
             - name: DB_HOST
               value: 103.82.243.89
             - name: DB_USERNAME
-              value: klikgeni-test
+              valueFrom:
+                secretKeyRef:
+                  name: klikgeni-test-secret
+                  key: default_username
             - name: DB_PASSWORD
-              value: Eshaezaedoo6zae
+              valueFrom:
+                secretKeyRef:
+                  name: klikgeni-test-secret
+                  key: default_password
             - name: DB_PORT
               value: "3307"
             - name: POD_NAME
