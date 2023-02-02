@@ -32,7 +32,7 @@ spec:
             - name: DB_PASSWORD
               value: Eshaezaedoo6zae
             - name: DB_PORT
-              value: "3307"
+              value: "3306"
             - name: POD_NAME
               valueFrom:
                 fieldRef:
