@@ -25,6 +25,8 @@ spec:
             - secretRef:
                 name: klikgeni-test-secret
           env:
+            - name: DB_HOST
+              value: 103.82.243.89
             - name: DB_PORT
               value: "3307"
             - name: POD_NAME
