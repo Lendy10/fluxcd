@@ -24,13 +24,25 @@ spec:
                 name: klikgeni-test-configmap-deployment
           env:
             - name: DB_DATABASE
-              value: klikgeni_test
+              valueFrom:
+                configMapKeyRef:
+                  name: klikgeni-test-configmap
+                  key: default_database
             - name: DB_HOST
-              value: 103.82.243.89
+              valueFrom:
+                configMapKeyRef:
+                  name: klikgeni-test-configmap
+                  key: database_url
             - name: DB_USERNAME
-              value: klikgeni-test
+              valueFrom:
+                secretKeyRef:
+                  name: klikgeni-prod-secret
+                  key: default_username
             - name: DB_PASSWORD
-              value: Eshaezaedoo6zae
+              valueFrom:
+                secretKeyRef:
+                  name: klikgeni-prod-secret
+                  key: default_password
             - name: DB_PORT
               value: "3307"
             - name: POD_NAME
@@ -63,11 +75,33 @@ spec:
           #   - "--kubelet-preferred-address-types=InternalIP,ExternalIP"
           ports:
             - containerPort: 80
-          # volumeMounts:
-          #   - mountPath: /var/www/html/public/image
-          #     name: laravel-public
-          #     subPath: klikgeni-test/public
-      # volumes:
-      #   - name: laravel-public
-      #     persistentVolumeClaim:
-      #       claimName: klikgeni-test-public
+            # volumeMounts:
+            #   - mountPath: /var/www/html/public/image
+            #     name: laravel-public
+            #     subPath: klikgeni-test/public
+            # volumes:
+            #   - name: laravel-public
+            #     persistentVolumeClaim:
+            #       claimName: klikgeni-test-public
+
+            - name: DB_DATABASE
+              value: klikgeni_test
+            - name: DB_HOST
+              value: 103.82.243.89
+            - name: DB_USERNAME
+              value: klikgeni-test
+            - name: DB_PASSWORD
+              value: Eshaezaedoo6zae
+            - name: DB_PORT
+              value: "3307"
+
+            - name: DB_DATABASE
+              value: klikgeni_test
+            - name: DB_HOST
+              value: 103.82.243.89
+            - name: DB_USERNAME
+              value: klikgeni-test
+            - name: DB_PASSWORD
+              value: Eshaezaedoo6zae
+            - name: DB_PORT
+              value: "3307"
