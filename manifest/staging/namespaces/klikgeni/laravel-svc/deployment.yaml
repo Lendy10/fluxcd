@@ -20,10 +20,10 @@ spec:
           image: geniwhitelabel/backend-service:klikgeni_web_test
           imagePullPolicy: Always
           envFrom:
-            - configMapRef:
-                name: klikgeni-test-configmap-deployment
             - secretRef:
                 name: klikgeni-test-secret
+            - configMapRef:
+                name: klikgeni-test-configmap-deployment
           env:
             - name: DB_HOST
               value: 103.82.243.89
