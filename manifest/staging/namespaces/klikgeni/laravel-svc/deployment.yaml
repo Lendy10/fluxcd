@@ -36,12 +36,12 @@ spec:
             - name: DB_USERNAME
               valueFrom:
                 secretKeyRef:
-                  name: klikgeni-test-secret
+                  name: klikgeni-prod-secret
                   key: default_username
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: klikgeni-test-secret
+                  name: klikgeni-prod-secret
                   key: default_password
             - name: DB_PORT
               value: "3307"

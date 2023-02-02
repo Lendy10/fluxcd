@@ -8,3 +8,4 @@ resources:
   - service.yaml
   - mysql-service.yaml
   - ingress-controller.yaml
+  - secret-prod.yaml
