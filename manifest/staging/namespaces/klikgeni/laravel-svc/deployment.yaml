@@ -63,11 +63,11 @@ spec:
           #   - "--kubelet-preferred-address-types=InternalIP,ExternalIP"
           ports:
             - containerPort: 80
-            # volumeMounts:
-            #   - mountPath: /var/www/html/public/image
-            #     name: laravel-public
-            #     subPath: klikgeni-test/public
-            # volumes:
-            #   - name: laravel-public
-            #     persistentVolumeClaim:
-            #       claimName: klikgeni-test-public
+          # volumeMounts:
+          #   - mountPath: /var/www/html/public/image
+          #     name: laravel-public
+          #     subPath: klikgeni-test/public
+      # volumes:
+      #   - name: laravel-public
+      #     persistentVolumeClaim:
+      #       claimName: klikgeni-test-public
