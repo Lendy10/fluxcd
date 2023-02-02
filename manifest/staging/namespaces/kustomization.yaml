@@ -3,5 +3,5 @@ kind: Kustomization
 resources:
   # - operation
   # - tools
-  - klikgeni
+  # - klikgeni
   - ingress
