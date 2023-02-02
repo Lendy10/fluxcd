@@ -29,10 +29,7 @@ spec:
                   name: klikgeni-test-secret
                   key: default_database
             - name: DB_HOST
-              valueFrom:
-                secretKeyRef:
-                  name: klikgeni-test-secret
-                  key: database_url
+              value: 103.82.243.89
             - name: DB_USERNAME
               valueFrom:
                 secretKeyRef:
