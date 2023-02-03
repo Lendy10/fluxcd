@@ -24,4 +24,5 @@ metadata:
   name: klikgeni-svc
 spec:
   type: ExternalName
-  externalName: klikgeni-test-internal-service.klikgeni.svc
+  externalName: klikgeni-test-internal-service.klikgeni.svc.cluster.local
+# test-service.namespacename.svc.cluster.local
