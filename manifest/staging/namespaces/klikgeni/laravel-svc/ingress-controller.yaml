@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   name: ingress-controller
   annotations:
+    # jangan diganti
     kubernetes.io/ingress.class: nginx
 spec:
   rules:

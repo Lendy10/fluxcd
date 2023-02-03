@@ -3,7 +3,8 @@ kind: Ingress
 metadata:
   name: ingress-controller
   annotations:
-    kubernetes.io/ingress.class: ingress-nginx
+    # jangan diganti
+    kubernetes.io/ingress.class: nginx
 spec:
   rules:
     - host: ingress.pembelajaran.my.id
@@ -16,7 +17,6 @@ spec:
                   number: 80
             pathType: Prefix
             path: /
-
 ---
 apiVersion: v1
 kind: Service
