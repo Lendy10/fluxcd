@@ -25,4 +25,6 @@ metadata:
 spec:
   type: ExternalName
   externalName: klikgeni-test-internal-service.klikgeni.svc.cluster.local
+  ports:
+    - port: 80
 # test-service.namespacename.svc.cluster.local
